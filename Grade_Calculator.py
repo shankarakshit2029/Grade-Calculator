@@ -68,6 +68,7 @@ def average_minor_grades(minor_grades):
     Returns: The 40% of the average grade, which can be a float.
     """
     average_minor = 0
+    raw_minor = 0
     if is_list_empty(minor_grades) == "valid":
         raw_minor = sum_list(minor_grades) / len(minor_grades)
         average_minor = (raw_minor) * 0.4
@@ -215,12 +216,12 @@ def calculate_weighted_gpa(grade, level):
 
 def print_list(all_grade_rec):
     """
-    This function gives the organized result in printable format
-    Args: List of Dictionary that holds the
+    This function gives the organuzed result in printable format
+    Args: List of Dictonary that holds the Subject, Grade, Unweighted GPA and Weighted GPA
     """
     print("")
     print("################################")
-    print("######## GPA CALCULATOR ########")
+    print("##########-CALCULATOR-##########")
     print("################################")
     print("")
     print("--------------------------------")
@@ -228,6 +229,20 @@ def print_list(all_grade_rec):
         for key in item:
             print(key + " : " + str(item[key]))
         print("--------------------------------")
+
+
+def validate_subject_course(subject_course):
+    prohibited_char = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
+    if len(subject_course) >= 25:
+        return "Invalid"
+    else:
+        for char in prohibited_char:
+            if subject_course.find(char) != -1:
+                subject_name = "valid"
+            else:
+                subject_name = "Invalid"
+                break
+        return subject_name
 
 
 print("Hello! Welcome to the Grade Calculator! ")
@@ -238,6 +253,10 @@ all_grade_rec = []
 
 while user_want_more.upper() == "Y":
     subject_course = input("What is the name of your Course? ")
+    validate = validate_subject_course(subject_course)
+    if validate == "Invalid":
+        print("Your course name is invalid, so your course name is 'unknown' ")
+        subject_course = "Unknown"
     tc = type_class()
     if tc == "Invalid":
         print("Your input is invalid, and grade will be calculated as On-Level. ")
