@@ -25,7 +25,7 @@ The Grade Calculator application allows users to calculate their grades based on
    ```
 4. Run the application:
    ```bash
-   python app.py
+   python Grade_Calculator.py
    ```
 
 ## Usage
