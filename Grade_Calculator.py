@@ -68,7 +68,6 @@ def average_minor_grades(minor_grades):
     Returns: The 40% of the average grade, which can be a float.
     """
     average_minor = 0
-    raw_minor = 0
     if is_list_empty(minor_grades) == "valid":
         raw_minor = sum_list(minor_grades) / len(minor_grades)
         average_minor = (raw_minor) * 0.4
@@ -232,6 +231,8 @@ def print_list(all_grade_rec):
 
 
 print("Hello! Welcome to the Grade Calculator! ")
+print("")
+print("")
 user_want_more = "Y"
 all_grade_rec = []
 
