@@ -215,8 +215,8 @@ def calculate_weighted_gpa(grade, level):
 
 def print_list(all_grade_rec):
     """
-    This function gives the organuzed result in printable format
-    Args: List of Dictonary that holds the
+    This function gives the organized result in printable format
+    Args: List of Dictionary that holds the
     """
     print("")
     print("################################")
